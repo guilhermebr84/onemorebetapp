@@ -1,16 +1,12 @@
 function NewBet() {
-
-  function handleSubmit (event) {
-    event.preventDefault()
+  function handleSubmit(event) {
+    event.preventDefault();
   }
-    return (
+  return (
     <div>
-    <h1>Cadastrar Nova Aposta</h1>
-    <form onSubmit={handleSubmit}>
-
-    </form>
-
+      <h1>Cadastrar Nova Aposta</h1>
+      <form onSubmit={handleSubmit}></form>
     </div>
-    )
+  );
 }
-  export default NewBet;
+export default NewBet;
