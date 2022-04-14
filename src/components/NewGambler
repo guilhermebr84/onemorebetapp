@@ -1,0 +1,5 @@
+function Gambler () {
+    return
+}
+
+export default Gambler

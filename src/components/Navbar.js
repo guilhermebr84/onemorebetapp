@@ -5,7 +5,7 @@ function Navbar() {
       <nav className="Navbar">
         <ul>
             <Link to="/"> Home </Link>
-            <Link to="/newbet"> Escolher Liga e Jogos </Link>
+            <Link to="/newbet"> Nova Aposta </Link>
             <Link to="/readbet"> Consultar Apostas </Link>
         </ul>
       </nav>
