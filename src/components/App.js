@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
+import "bootstrap/dist/css/bootstrap.min.css"
 
 //components
 import Navbar from "./Navbar";
@@ -14,12 +15,12 @@ function App() {
   const [state, setState] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    axios
-      .get("")
-      .then((response) => console.log(response))
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("")
+  //     .then((response) => console.log(response))
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   return (
     <div>
