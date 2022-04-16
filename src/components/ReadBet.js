@@ -5,11 +5,13 @@ import { useParams } from 'react-router-dom';
 
 function ReadBet() {
   const [state, setState] = useState({
-    apostador:"",
+    apostador: "",
+    liga: "",
+    partida: "",
+    resultado: "",
+    placar: "",
     data: "",
-		valor: 0,
-		resultado: "",
-		placar: ""
+    valor: 0,
   })
 
   const { id } = useParams;
@@ -31,13 +33,16 @@ function ReadBet() {
       <div className="col">
       {state.map(currentBetObj => {
 
-        const {data, valor, resultado, placar, id} = currentBetObj
+        const {apostador, liga, partida, resultado, placar, data, id} = currentBetObj
 
         return <div key={id} className="row border-end mx-3">
-          <h3>{data}</h3>
-            <p>{valor}</p>
-            <p>{resultado}</p>
-            <p>{placar}</p>
+          <h3>{state.apostador}</h3>
+            <p>{state.liga}</p>
+            <p>{state.partida}</p>
+            <p>{state.resultado}</p>
+            <p>{state.placar}</p>
+            <p>{state.data}</p>
+            <p>{state.valor}</p>
         </div>
       })}
       </div>
