@@ -9,6 +9,8 @@ import Navbar from "./Navbar";
 import Home from "./Home";
 import NewBet from "./NewBet";
 import ReadBet from "./ReadBet";
+import DeleteBet from "./DeleteBet";
+import UpdateBet from "./UpdateBet";
 import ErrorPage from "./ErrorPage";
 
 function App() {
@@ -30,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/newbet" element={<NewBet />} />
           <Route path="/readbet" element={<ReadBet />} />
+          <Route path="/update/:id" element={<UpdateBet />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>
