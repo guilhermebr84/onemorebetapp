@@ -7,7 +7,7 @@ function Home() {
 
     
 
-    const imgURL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvew6ApO5lpUFOjOPoORmMNULL7a-qc-_8Tg&usqp=CAU";
+    const imgURL = "https://438079-1371756-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2020/01/sport-betting-banner-2.jpg";
 
   return (
     <div>

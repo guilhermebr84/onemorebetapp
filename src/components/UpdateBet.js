@@ -39,7 +39,9 @@ function UpdateBet() {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      const response = await axios.patch(
+      delete state._id;
+      // delete é palavra-chave
+      const response = await axios.put(
         `https://ironrest.herokuapp.com/onemorebetapp/${id}`,
         state
       );
@@ -77,10 +79,10 @@ function UpdateBet() {
               onChange={handleChange}
             >
               <option selected>{state.liga}</option>
-              <option value="1">Brasil Série A</option>
-              <option value="2">Premier League</option>
-              <option value="3">Calcio A</option>
-              <option value="4">La Liga</option>
+              <option value="Brasil Série A">Brasil Série A</option>
+              <option value="Premier League2">Premier League</option>
+              <option value="Calcio A">Calcio A</option>
+              <option value="La Liga4">La Liga</option>
             </select>
           </div>
 
@@ -95,10 +97,10 @@ function UpdateBet() {
               onChange={handleChange}
             >
               <option selected>{state.partida}</option>
-              <option value="1">A x B</option>
-              <option value="2">C x D</option>
-              <option value="3">E x F</option>
-              <option value="4">H x I</option>
+              <option value="A x B">A x B</option>
+              <option value="C x D">C x D</option>
+              <option value="E x F">E x F</option>
+              <option value="H x I">H x I</option>
             </select>
           </div>
 
@@ -115,8 +117,9 @@ function UpdateBet() {
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
+                  name="resultado"
                   id="flexRadioDefault1"
+                  value="Vitória Mandante"
                 />
                 <label class="form-check-label" for="flexRadioDefault1">
                   Vitória Mandante
@@ -126,8 +129,9 @@ function UpdateBet() {
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
+                  name="resultado"
                   id="flexRadioDefault2"
+                  value="Empate"
                 />
                 <label class="form-check-label" for="flexRadioDefault1">
                   Empate
@@ -137,8 +141,9 @@ function UpdateBet() {
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
+                  name="resultado"
                   id="flexRadioDefault3"
+                  value="Vitória Visitante"
                 />
                 <label class="form-check-label" for="flexRadioDefault1">
                   Vitória Visitante

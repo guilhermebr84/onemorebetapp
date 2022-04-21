@@ -33,6 +33,7 @@ function App() {
           <Route path="/newbet" element={<NewBet />} />
           <Route path="/readbet" element={<ReadBet />} />
           <Route path="/update/:id" element={<UpdateBet />} />
+          <Route path="/delete/:id" element={<DeleteBet />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </div>

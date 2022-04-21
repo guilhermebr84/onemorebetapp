@@ -13,7 +13,7 @@ function NewBet() {
     partida: "",
     resultado: "",
     placar: "",
-    date: "",
+    date: new Date(Date.now()).toLocaleString().split(' ')[0],
     valor: 0,
   });
 
@@ -26,6 +26,8 @@ function NewBet() {
   async function handleSubmit(event) {
     event.preventDefault();
     //api
+    
+
     axios
       .post("https://ironrest.herokuapp.com/onemorebetapp", state)
       .then((response) => {
@@ -33,10 +35,6 @@ function NewBet() {
         navigate("/");
       })
       .catch((err) => console.error(err));
-  }
-
-  function handleRestartForm(event) {
-    event.preventDefault();
   }
 
   return (
@@ -65,10 +63,10 @@ function NewBet() {
               onChange={handleChange}
             >
               <option selected>Escolha Liga diponível...</option>
-              <option value="1">Brasil Série A</option>
-              <option value="2">Premier League</option>
-              <option value="3">Calcio A</option>
-              <option value="4">La Liga</option>
+              <option value="Brasil Série A">Brasil Série A</option>
+              <option value="Premier League">Premier League</option>
+              <option value="Calcio A">Calcio A</option>
+              <option value="La Liga">La Liga</option>
             </select>
           </div>
 
@@ -83,10 +81,10 @@ function NewBet() {
               onChange={handleChange}
             >
               <option selected>Escolha a partida... </option>
-              <option value="1">A x B</option>
-              <option value="2">C x D</option>
-              <option value="3">E x F</option>
-              <option value="4">H x I</option>
+              <option value="A x B">A x B</option>
+              <option value="C x D">C x D</option>
+              <option value="E x F">E x F</option>
+              <option value="H x I">H x I</option>
             </select>
           </div>
 
@@ -103,8 +101,9 @@ function NewBet() {
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
+                  name="resultado"
                   id="flexRadioDefault1"
+                  value="Vitória Visitante"
                 />
                 <label class="form-check-label" for="flexRadioDefault1">
                   Vitória Mandante
@@ -114,8 +113,9 @@ function NewBet() {
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
+                  name="resultado"
                   id="flexRadioDefault2"
+                  value="Vitória Visitante"
                 />
                 <label class="form-check-label" for="flexRadioDefault1">
                   Empate
@@ -125,8 +125,9 @@ function NewBet() {
                 <input
                   class="form-check-input"
                   type="radio"
-                  name="flexRadioDefault"
+                  name="resultado"
                   id="flexRadioDefault3"
+                  value="Vitória Visitante"
                 />
                 <label class="form-check-label" for="flexRadioDefault1">
                   Vitória Visitante
@@ -134,6 +135,18 @@ function NewBet() {
               </div>
             </div>
           </div>
+
+          <div className="input-group mb-3">
+            <span className="input-group-text">Placar</span>
+            <input
+              type="number"
+              className="form-control"
+              name="placar"
+              value={state.placar}
+              onChange={handleChange}
+            ></input>
+          </div>
+
           <div className="input-group mb-3">
             <span className="input-group-text">Data da Aposta</span>
             <input

@@ -38,11 +38,11 @@ function ReadBet() {
             placar,
             data,
             valor,
-            id,
+            _id,
           } = currentBetObj;
 
           return (
-            <div key={id} className="row border-end mx-3">
+            <div key={_id} className="mt-5">
               <h3>{apostador}</h3>
               <p>{liga}</p>
               <p>{partida}</p>
@@ -51,15 +51,14 @@ function ReadBet() {
               <p>{data}</p>
               <p>{valor}</p>
 
-              <Link key={id} className="btn btn-warning me-3" to={`/${id}`}>
-                Editar/Atualizar
-              </Link>
-              <Link
-                className="btn btn-danger me-3"
-                to={`https://ironrest.herokuapp.com/onemorebetapp/delete/${id}`}
-              >
-                Delete
-              </Link>
+              <div className="mb-3 text-start">
+                <Link className="ms-2 btn btn-warning" to={`/update/${_id}`}>
+                  Editar/Atualizar
+                </Link>
+                <Link className="ms-4 btn btn-danger" to={`/delete/${_id}`}>
+                  Delete
+                </Link>
+              </div>
 
               {/* <Link></Link> */}
               {/* adicionar 2 botoes - rota editar e rota delete - pode ser <button></button> ou <Link /> */}
