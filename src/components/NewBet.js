@@ -12,8 +12,9 @@ function NewBet() {
     liga: "",
     partida: "",
     resultado: "",
-    placar: "",
-    date: new Date(Date.now()).toLocaleString().split(' ')[0],
+    placar_man: 0,
+    placar_vis: 0,
+    date: new Date(Date.now()).toLocaleString().split(" ")[0],
     valor: 0,
   });
 
@@ -25,9 +26,6 @@ function NewBet() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    //api
-    
-
     axios
       .post("https://ironrest.herokuapp.com/onemorebetapp", state)
       .then((response) => {
@@ -81,10 +79,12 @@ function NewBet() {
               onChange={handleChange}
             >
               <option selected>Escolha a partida... </option>
-              <option value="A x B">A x B</option>
-              <option value="C x D">C x D</option>
-              <option value="E x F">E x F</option>
-              <option value="H x I">H x I</option>
+              <option value="Internacional x Palmeiras">
+                Internacional x Palmeiras
+              </option>
+              <option value="Liverpool x Man.City">Liverpool x Man.City</option>
+              <option value="Juventus x Napoli">Juventus x Napoli</option>
+              <option value="Barça x Real">Barça x Real</option>
             </select>
           </div>
 
@@ -115,7 +115,7 @@ function NewBet() {
                   type="radio"
                   name="resultado"
                   id="flexRadioDefault2"
-                  value="Vitória Visitante"
+                  value="Empate"
                 />
                 <label class="form-check-label" for="flexRadioDefault1">
                   Empate
@@ -138,27 +138,33 @@ function NewBet() {
 
           <div className="input-group mb-3">
             <span className="input-group-text">Placar</span>
-            <input
-              type="number"
-              className="form-control"
-              name="placar"
-              value={state.placar}
-              onChange={handleChange}
-            ></input>
+            <div className="row">
+              <span className="ms-4 input-group-text">
+                Gols Mandante
+                <input
+                  type="number"
+                  className="ms-4 form-control"
+                  name="placar_man"
+                  value={state.placar_man}
+                  onChange={handleChange}
+                ></input>
+              </span>
+              <span className="ms-4 input-group-text">Gols Visitante
+              <input
+                type="number"
+                className="ms-4 form-control"
+                name="placar_vis"
+                value={state.placar_vis}
+                onChange={handleChange}
+              ></input>
+               </span>
+            </div>
           </div>
 
           <div className="input-group mb-3">
-            <span className="input-group-text">Data da Aposta</span>
-            <input
-              type="text"
-              className="form-control"
-              name="date"
-              value={state.date}
-              onChange={handleChange}
-            ></input>
-          </div>
-          <div className="input-group mb-3">
-            <span className="input-group-text">Valor em BRL</span>
+            <span className="input-group-text">
+              Valor da aposta em R$ Reais
+            </span>
             <input
               type="text"
               className="form-control"
@@ -168,6 +174,17 @@ function NewBet() {
             ></input>
           </div>
           <div>
+            <div className="input-group mb-3">
+              <span className="input-group-text">Data da Aposta</span>
+              <input
+                type="text"
+                className="form-control"
+                name="date"
+                value={state.date}
+                onChange={handleChange}
+              ></input>
+            </div>
+
             <button type="submit" className="ml-5 btn btn-primary">
               Enviar
             </button>

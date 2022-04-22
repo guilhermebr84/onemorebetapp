@@ -35,8 +35,9 @@ function ReadBet() {
             liga,
             partida,
             resultado,
-            placar,
-            data,
+            placar_man,
+            placar_vis,
+            date,
             valor,
             _id,
           } = currentBetObj;
@@ -44,12 +45,12 @@ function ReadBet() {
           return (
             <div key={_id} className="mt-5">
               <h3>{apostador}</h3>
-              <p>{liga}</p>
-              <p>{partida}</p>
-              <p>{resultado}</p>
-              <p>{placar}</p>
-              <p>{data}</p>
-              <p>{valor}</p>
+              <p>Liga: {liga}</p>
+              <p>Partida: {partida}</p>
+              <p>Resultado: {resultado}</p>
+              <p>Placar: {placar_man} x {placar_vis}</p>
+              <p>Valor Apostado: R$ {valor}</p>
+              <p>Data válida da aposta: {date}</p>
 
               <div className="mb-3 text-start">
                 <Link className="ms-2 btn btn-warning" to={`/update/${_id}`}>
@@ -60,8 +61,6 @@ function ReadBet() {
                 </Link>
               </div>
 
-              {/* <Link></Link> */}
-              {/* adicionar 2 botoes - rota editar e rota delete - pode ser <button></button> ou <Link /> */}
             </div>
           );
         })}

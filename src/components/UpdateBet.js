@@ -9,8 +9,9 @@ function UpdateBet() {
     liga: "",
     partida: "",
     resultado: "",
-    placar: "",
-    data: "",
+    placar_man: "",
+    placar_vis: "",
+    date: new Date(Date.now()).toLocaleString().split(' ')[0],
     valor: 0,
   });
 
@@ -97,10 +98,10 @@ function UpdateBet() {
               onChange={handleChange}
             >
               <option selected>{state.partida}</option>
-              <option value="A x B">A x B</option>
-              <option value="C x D">C x D</option>
-              <option value="E x F">E x F</option>
-              <option value="H x I">H x I</option>
+              <option value="Internacional x Palmeiras">Internacional x Palmeiras</option>
+              <option value="Liverpool x Man.City">Liverpool x Man.City</option>
+              <option value="Juventus x Napoli">Juventus x Napoli</option>
+              <option value="Barça x Real">Barça x Real</option>
             </select>
           </div>
 
@@ -151,6 +152,32 @@ function UpdateBet() {
               </div>
             </div>
           </div>
+          
+          <div className="input-group mb-3">
+            <span className="input-group-text">Placar</span>
+            <div className="row">
+              <span className="ms-4 input-group-text">
+                Gols Mandante
+                <input
+                  type="number"
+                  className="ms-4 form-control"
+                  name="placar_man"
+                  value={state.placar_man}
+                  onChange={handleChange}
+                ></input>
+              </span>
+              <span className="ms-4 input-group-text">Gols Visitante
+              <input
+                type="number"
+                className="ms-4 form-control"
+                name="placar_vis"
+                value={state.placar_vis}
+                onChange={handleChange}
+              ></input>
+               </span>
+            </div>
+          </div>
+
           <div className="input-group mb-3">
             <span className="input-group-text">
               Data da Aposta é Atualizada para HOJE
@@ -163,8 +190,9 @@ function UpdateBet() {
               onChange={handleChange}
             ></input>
           </div>
+
           <div className="input-group mb-3">
-            <span className="input-group-text">Confirmar Valor em BRL</span>
+            <span className="input-group-text">Alterar o Valor em BRL</span>
             <input
               type="text"
               className="form-control"
@@ -173,11 +201,13 @@ function UpdateBet() {
               onChange={handleChange}
             ></input>
           </div>
+
           <div>
             <button type="submit" className="ml-5 btn btn-primary">
               Salvar
             </button>
           </div>
+
         </div>
       </form>
     </div>

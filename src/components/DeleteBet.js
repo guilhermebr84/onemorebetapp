@@ -24,7 +24,7 @@ function DeleteBet() {
     }
   }, [id, navigate]);
 
-  return <p>Deletando...</p>;
+  return <p>Sua Aposta está sendo deletada...</p>;
 }
 
 export default DeleteBet;
