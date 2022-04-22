@@ -11,4 +11,4 @@ O app tem o objetivo de desenvolver as especificidades de CRUD do React, utiliza
 ## Link
 [PRESENTATION]()
 
-[GHPAGES](https://onemorebetapp.netlify.app/)
+[netlify deployed app](https://onemorebetapp.netlify.app/)
