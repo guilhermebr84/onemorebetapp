@@ -11,6 +11,7 @@ import NewBet from "./NewBet";
 import ReadBet from "./ReadBet";
 import DeleteBet from "./DeleteBet";
 import UpdateBet from "./UpdateBet";
+import ReadAPI from "./ReadAPI";
 import ErrorPage from "./ErrorPage";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/newbet" element={<NewBet />} />
           <Route path="/readbet" element={<ReadBet />} />
+          <Route path="/readapi" element={<ReadAPI />} />
           <Route path="/update/:id" element={<UpdateBet />} />
           <Route path="/delete/:id" element={<DeleteBet />} />
           <Route path="*" element={<ErrorPage />} />
